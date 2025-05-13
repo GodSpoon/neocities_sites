@@ -1,0 +1,156 @@
+<head>
+    <title>&#10022; &#10022; loading.... (INTER).face</title>
+    <link rel="icon" type="image/x-icon" href="/graphix/favicons/blulove.gif">
+    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enter the toribytez✦ // (INTER).face . . .">
+    <style>
+        html {
+            overflow: hidden;
+        }
+        
+        .wrap {
+            margin: 150 auto;
+            width: 640px;
+            padding: 55px;
+        }
+        
+        #splash {
+            box-shadow: 0px 0px 15px #003dff67;
+            position: relative;
+        }
+        /* --------------------------------------------------------------------- */
+        .titlebar {
+            border: 2px solid #1a74ff;
+            border-radius: 7px 7px 0px 0px;
+            border-bottom: 1px solid #1a74ff;
+        }
+        /* --------------------------------------------------------------------- */
+        .introbox {
+            background-color: azure;
+            text-align: center;
+            border: 2px solid #1a74ff;
+            border-top: none;
+        }
+        
+        .introbox, .inner {
+            padding: 5;
+        }
+        
+        .inner {
+            border: 1.5px solid #1a74ff;
+            height: auto;
+        }
+        /* --------------------------------------------------------------------- */
+        .flex {
+            display: flex;
+            gap: 10px;
+            margin-bottom: -5;
+        }
+        /* --------------------------------------------------------------------- */
+        h2 {
+            text-align: left;
+        }
+        
+        ul {
+            list-style-type: '🟆';
+            text-align: left;
+        }
+        /* --------------------------------------------------------------------- */        
+        a {
+          text-decoration: none; 
+        }
+        
+        .button {
+            width: 150px;
+            margin: 0 auto;
+            color: white;
+            text-shadow: -1px -1px 0 #1a74ff, 1px -1px 0 #1a74ff, -1px 1px 0 #1a74ff, 1px 1px 0 #1a74ff;
+            background: linear-gradient(0deg, #aee6ff 1%, #63c4ff 49%, #27a3ff 51%, #bce8fb 90%);
+            
+            cursor: pointer;
+            border-radius: 6px;
+            border: 1px solid #1a74ff;
+            
+            &:hover {
+                cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), pointer;
+                filter: brightness(1.1)
+                    saturate(1.5);
+                transform: scale(1.1);
+            }
+        }
+        /* --------------------------------------------------------------------- */
+        div#heartz {
+            content: url(https://file.garden/ZpMlZiOun08fNAbF/graphix/misc/heartz.png);
+            z-index: -1;
+            position: absolute;
+            top: -80;
+            left: -92;
+            width: 700px;
+            float: right;
+            filter: sepia(1) hue-rotate(180deg) saturate(6)
+        }
+        
+        img#ffg, img#sign {
+            filter: sepia(1) hue-rotate(150deg) saturate(1.5)
+                drop-shadow(0px 0px 15px #003dff67);
+        }
+        
+        img#ffg {
+            right: -89;
+            bottom: -50;
+            width: 150px;
+            position: absolute;
+            animation-name: float;
+            
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            filter: sepia(1) hue-rotate(150deg) saturate(1.5)
+                drop-shadow(0px 0px 15px #003dff67);
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0px); }
+            50%  { transform: translate(0, 5px); }
+            100%   { transform: translate(0, -0px); }    
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="splash">
+            <div class="titlebar">
+                <h1>loading... toribytez&#10022; // (INTER).face</h1>
+                <img src="/graphix/favicons/bluelace/note.gif" style="min-height: 20; align-self: center; margin-left: 156">
+            </div>
+            
+            <div class="introbox">
+                <div class="inner">
+                    <div class="flex">
+                        <img src="/art/branding/sigil-anim2.gif" style="height: 135px; margin: 15 auto; filter: drop-shadow(0px 0px 3px #2781ffff);">
+                        <div style="align-content: flex-start; margin-left: 15px">
+                            <h2>Keep in mind that.... <img id="sign" src="/graphix/misc/axxlogo.gif" style="width: 35px; float:right"></h2>
+                            <ul>
+                                <li>This site is <i>extremely</i> mobile-unfriendly,</li>
+                                <li>was designed for Mozilla Firefox on a <b>1920 x 1080 display</b> in mind,</li>
+                                <li>is (somewhat) GIF-heavy,</li>
+                                <li>and is recommended for a <b>14+</b> audience.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="/home">
+                        <div class="button">
+                          I wish to proceed.
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <img id="ffg" src="/graphix/characters/firefoxgirl2'.png" style="">
+            <div id="heartz"></div>
+        </div>
+    </div>
+</body>

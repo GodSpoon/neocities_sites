@@ -1,0 +1,451 @@
+/* Start https://www.cursors-4u.com */
+    * { cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1113.cur), default; }
+    a { cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), pointer; }
+
+/* End https://www.cursors-4u.com */
+/*---------------------------------------------------------*/
+/* scrollbar... Firefox bc Firefox is GOD! */
+    * {scrollbar-width: thin;
+       scrollbar-color: #6394ff #a5e1ff;}
+
+    /* ...But for Chrome, Edge, Safari */
+    *::-webkit-scrollbar {width: 8px;}
+    *::-webkit-scrollbar-track {background: #9ad8ff;}
+    *::-webkit-scrollbar-thumb {background-color: #6394ff; border-radius: 4px; border: 3px solid #ffffff;}
+/* ----------------------------------------------- */
+/* highlights */
+    mark {
+        background-image: radial-gradient(#f2fbff, #4bc9ff);
+        color: #0059cd;
+        font-weight: 600;
+    }
+
+    ::selection {
+        color: #99ecff;
+        text-shadow: -1px -1px 0 #1a74ff, 1px -1px 0 #1a74ff, -1px 1px 0 #1a74ff, 1px 1px 0 #1a74ff,
+            0px 0px 5px #1a74ff, 0px 0px 5px #1a74ff, 0px 0px 5px #1a74ff;
+    }
+/* ----------------------------------------------- */
+/* fonts */
+    /* ConsoleRemix */
+        @font-face {
+            font-family: ConsoleRemix;
+            src: url('https://file.garden/ZpMlZiOun08fNAbF/fonts/ConsoleRemix/CONSRI__.TTF') format("truetype");
+        }
+    /* BuilderSans */
+        @font-face {
+            font-family: BuilderSansLight;
+            src: url(/fonts/Builder_Sans/BuilderSans-Light-300.otf) format("opentype");
+        }
+
+
+        @font-face {
+            font-family: BuilderSans;
+            src: url(/fonts/Builder_Sans/BuilderSans-Medium-500.otf) format("opentype");
+        }
+
+
+    /* Fredoka */
+        @font-face {
+            font-family: FredokaSemiBold;
+            src: url('/fonts/Fredoka/static/Fredoka-SemiBold.ttf') format("truetype");
+        }
+
+        @font-face {
+            font-family: FredokaBold;
+            src: url('/fonts/Fredoka/static/Fredoka-Bold.ttf') format("truetype");
+        }
+/* ----------------------------------------------- */
+    /* main digital body */
+        html {
+            font-family: 'BuilderSansLight';
+            font-size: 15px;
+            color: #005aff;
+        }
+
+        body {
+            background: azure;
+            margin: 0;
+            background-color: #a5e1ff;
+            background-size: 35px;
+            background-image:url('/graphix/bgs/checkered.gif'); background-attachment: fixed;
+            background-blend-mode: screen;
+        }
+
+        .wrap {
+            box-sizing: border-box;
+            padding: 10;
+            width: 911;
+            margin: 5 auto;
+        }
+
+        #container, #header, #footer {
+            border: 1px solid #1a74ff;
+        }
+
+        #container {
+            background-color: azure;
+            box-shadow: 0px 0px 15px #003dff67;
+            border-radius: 7px;
+            padding: 5;
+        }
+        
+        #header {
+            background: center / cover url(https://file.garden/ZpMlZiOun08fNAbF/cool%20imgs/blueskies.jpg);
+            background-repeat: no-repeat;
+            height: auto;
+            align-content: center;
+            margin-bottom: 5px;
+  
+            padding: 5;
+            position: relative;
+            
+            border: 1px solid #1a74ff;
+            border-radius: 7px 7px 0px 0px;
+        }
+        
+        #footer {
+            border-radius: 0px 0px 7px 7px;
+            
+            height: 30px;
+            padding: 1;
+            text-align: center;
+            align-content: center;
+            
+            font-size: 13px;
+            font-weight: bold;
+            color: white;
+            text-shadow: -1px -1px 0 #1a74ff, 1px -1px 0 #1a74ff, -1px 1px 0 #1a74ff, 1px 1px 0 #1a74ff;
+        }
+/* ----------------------------------------------- */
+    /* imgs */
+        img {
+            filter: brightness(1.1);
+        }
+
+/* ----------------------------------------------- */
+    /* logo */
+        #logo {
+            content: url(/art/branding/logo2.png);
+            display: block;
+            margin: 5 auto;
+            width: 250px;
+            height: auto;
+            filter: drop-shadow(0px 0px 8px #001cffba);
+            
+            &:hover {
+                transform:scale(1.1);
+                object-fit:contain;
+                cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), pointer;
+            }
+        }
+        
+        p.sub {
+            padding: 5;
+            font-style: italic;
+            font-family: 'ConsoleRemix';
+            color: white;
+            text-shadow: -1px -1px 0 #1a74ff, 1px -1px 0 #1a74ff, -1px 1px 0 #1a74ff, 1px 1px 0 #1a74ff,
+                -2px -2px 0 #1a74ff, 2px -2px 0 #1a74ff, -2px 2px 0 #1a74ff, 2px 2px 0 #1a74ff,
+                0px 0px 20px #001cffba, 0px 0px 20px #001cffba, 0px 0px 20px #001cffba;
+            position: absolute;
+            top: 65;
+            right: 221;
+        }
+/* ----------------------------------------------- */
+    /* headings */
+        h1, h2, h3, h4 {
+            font-family: 'FredokaSemiBold';
+            margin: 5;
+            font-style: italic;
+        }
+/* ----------------------------------------------- */
+    /* titlebar */
+        .titlebar, #nav, .markee, #footer {
+            background: linear-gradient(0deg, #aee6ff 1%, #63c4ff 49%, #27a3ff 51%, #bce8fb 90%);
+            border: 1px solid #1a74ff;
+        }
+
+        .titlebar {
+            display: flex;
+            overflow: hidden;
+            font-weight: bold;
+            align-content: center;
+            letter-spacing: 2px;
+            font-style: italic;
+            
+            h1 {
+                font-size: 15px;
+                color: white;
+                text-shadow: -1px -1px 0 #1a74ff,
+                    1px -1px 0 #1a74ff,
+                    -1px 1px 0 #1a74ff,
+                    1px 1px 0 #1a74ff;
+            }
+            
+            h1.empty {
+                cursor: default;
+                opacity: 0%;
+                font-size: 13px;
+                font-style: normal;
+            }
+        }
+/* ----------------------------------------------- */
+    /* nav */
+        #nav {
+            gap: 5px;
+            display: flex;
+            text-align: center;
+            justify-content: space-evenly;
+            font-size: 16px;
+            font-family: 'FredokaSemiBold';
+            font-weight: bold;
+            letter-spacing: 0.2px;
+            text-shadow: -1px -1px 0 #1a74ff, 1px -1px 0 #1a74ff, -1px 1px 0 #1a74ff, 1px 1px 0 #1a74ff,
+                    -1.5px -1.5px 0 #1a74ff, 1.5px -1.5px 0 #1a74ff, -1.5px 1.5px 0 #1a74ff, 1.5px 1.5px 0 #1a74ff;
+            padding: 5;
+            margin-bottom: 5px;
+            a {
+                text-decoration: none;
+            }
+            
+            .navbutton {
+                align-content: center;
+                background: linear-gradient(0deg, #f0ffff 1%, #a5e0ff 49%, #71ceff 51%, #f0ffff 90%);
+                border-radius: 4px;
+                border: 1px solid #1a74ff;
+                
+                width: 168px;
+                height: 26px;
+                cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), pointer;
+                color: white;
+                
+                &:hover {
+                    background: linear-gradient(180deg, rgba(182,225,255,1) 1%, rgba(125,182,255,1) 49%, rgba(68,149,254,1) 51%, rgba(200,232,255,1) 90%);
+                }
+            }
+        }
+/* ----------------------------------------------- */
+    /* marquee */
+        .markee {
+            display: flex;
+            gap: 5px;
+            padding: 2;
+            margin: 5 0;
+            justify-content: center;;
+        }
+
+        .marqueecontainer {
+            width: 100%;
+            overflow: hidden;
+            .scroller {
+                gap: 5px;
+                width: fit-content;
+                min-width: auto;
+                padding-left: 100%;
+                display: flex;
+                flex-direction: row;
+                animation: horizMarquee 30s linear infinite;
+                &:hover {
+                    animation-play-state: paused;
+                }
+            }
+        }
+
+        @keyframes horizMarquee {
+            100% {
+            transform: translate(-100%, 0);
+            }
+        }
+/* ----------------------------------------------- */
+    /* links */
+        a {
+            color: #0070ff;
+            font-weight: bold;
+            text-decoration-style: dotted;
+            
+            &:hover {
+                color: #00b5ff;
+            }
+            
+            &:active {
+                color: cyan;
+            }
+            
+            &:visited {
+                color: #0001d8;
+                &:hover {
+                    color: #0057da;
+                }
+            }
+        }
+/* ----------------------------------------------- */
+    /* flex */
+        .flex {
+            display: flex;
+            height: auto;
+            width: 100%;
+            gap: 5px;
+        }
+/* ----------------------------------------------- */
+    /* content box */
+        .content {
+            border: 1.5px solid #1a74ff;
+            border-top: none;
+            padding: 5px;
+            height: auto;
+            overflow-wrap: break-word;
+        }
+
+        .inner {
+            height: 530px;
+        }
+/* ------------------------------------------------ */
+    /* xtra */
+        textarea {
+            color: #0009b5;
+            margin-top: 5;
+            font-family: 'BuilderSansLight';
+            font-size: 11;
+            width: auto;
+            height: auto;
+            resize: none;
+            background-color: azure;
+            border: 1px solid #1a74ff;
+            border-radius: 7px;
+            scrollbar-width: none;
+        }
+
+        .divider {
+            content: url(/graphix/dividers/bow.png);
+            width: 100%;
+            margin: 5 auto;
+        }
+/* ------------------------------------------------ */
+        #quiz {
+            overflow-y: scroll;
+            text-align: center;
+            img {
+                filter: sepia(1)
+                        hue-rotate(180deg)
+                        saturate(3);
+                opacity: 70%;
+                max-width: 180px;
+                margin: 3 auto;
+                &:hover {
+                    opacity: 100%;
+                    transform: scale(1.1);
+                    transition: filter 0.5s;
+                    filter: saturate(1.5);
+                    cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), pointer;
+                }
+            }
+        }
+
+/* ------------------------------------------------ */
+    /* article */
+        #box:not(#box:has(.tab:target)) article:nth-child(1) {
+            display: block;
+        }
+        
+    /* hoard box */
+        #box {
+            overflow-x: hidden;
+        }
+
+        #box article {
+            display: none;
+        }
+
+        #box article:target {
+            display: block;
+        }
+
+        #fanlists.tab {
+            text-align: center;
+            img {
+                filter: brightness(1.05)
+                    saturate(0.5);
+                &:hover {
+                    filter: brightness(1.1);
+                    transform: scale(1.1);
+                    cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), pointer;
+                }
+            }
+        }
+        
+        #blinkies.tab {
+            text-align: center;
+            img {
+                height: 15px;
+            }
+        }
+
+        #stamps.tab {
+            text-align: center;
+            img {
+                height: 40px;
+                filter: drop-shadow(1px 1px 1px #27a3ff)
+                    drop-shadow(-1px -1px 1px #27a3ff);
+            }
+        }
+        
+        #antipixels.tab {
+            text-align: center;
+            img {
+                height: 15px;
+                filter: opacity(84%) brightness(1.2)
+                    drop-shadow(1px 1px 1px #27a3ff9c)
+                    drop-shadow(-1px -1px 1px #27a3ff9c);
+            }
+        }
+        
+        /* --------------- */
+        .content#hoard__inner,
+        .content#links {
+            overflow-y: hidden;
+            scrollbar-width: none;
+            gap: 5px;
+            display: flex;
+            flex-direction: row;
+            #box {
+                display: flex;
+                flex-direction: row;
+                overflow-y: auto;
+                padding: 5px;
+                border: 1px solid #1a74ff;
+                width: 100%;
+                
+                table, tr, td {
+                    border-spacing: 0;
+                }
+            }
+        }
+    /* selection menu */
+        .select {
+            gap: 1px;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            margin: 3 0;
+            a { text-decoration: none; }
+            .button {
+                text-decoration-style: none;
+                padding: 2;
+                text-align: center;
+                font-family: 'FredokaSemiBold';
+                font-weight: bold;
+                color: white;
+                text-shadow: -1px -1px 0 #1a74ff, 1px -1px 0 #1a74ff, -1px 1px 0 #1a74ff, 1px 1px 0 #1a74ff;
+
+                background: linear-gradient(0deg, #aee6ff 1%, #63c4ff 49%, #27a3ff 51%, #bce8fb 90%);
+                border: 1px solid #1a74ff;
+                border-radius: 7px;
+                cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), pointer;
+                
+                &:hover {
+                    transform: scale(1.1);
+                    filter: brightness(1.1);
+                }
+            }
+        }
