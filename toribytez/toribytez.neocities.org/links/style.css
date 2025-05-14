@@ -1,0 +1,118 @@
+/* Start https://www.cursors-4u.com */
+    * { cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1113.cur), default; }
+    a { cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), pointer; }
+
+/* End https://www.cursors-4u.com */
+/*---------------------------------------------------------*/
+/* scrollbar... Firefox bc Firefox is GOD! */
+    * {scrollbar-width: thin;
+       scrollbar-color: #6394ff #a5e1ff;}
+
+    /* ...But for Chrome, Edge, Safari */
+    *::-webkit-scrollbar {width: 8px;}
+    *::-webkit-scrollbar-track {background: #9ad8ff;}
+    *::-webkit-scrollbar-thumb {background-color: #6394ff; border-radius: 4px; border: 3px solid #ffffff;}
+/* ----------------------------------------------- */
+/* highlights */
+    mark {
+        background-image: radial-gradient(#f2fbff, #9ae1ff);
+        color: #0059cd;
+        font-weight: 600;
+    }
+
+    ::selection {
+        color: #99ecff;
+        text-shadow: -1px -1px 0 #1a74ff, 1px -1px 0 #1a74ff, -1px 1px 0 #1a74ff, 1px 1px 0 #1a74ff,
+            0px 0px 5px #1a74ff, 0px 0px 5px #1a74ff, 0px 0px 5px #1a74ff;
+    }
+/* ----------------------------------------------- */
+/* fonts */
+    /* BuilderSans */
+        @font-face {
+            font-family: BuilderSansLight;
+            src: url(../fonts/Builder_Sans/BuilderSans-Light-300.otf) format("opentype");
+        }
+
+
+        @font-face {
+            font-family: BuilderSans;
+            src: url(../fonts/Builder_Sans/BuilderSans-Medium-500.otf) format("opentype");
+        }
+
+
+    /* Fredoka */
+        @font-face {
+            font-family: FredokaSemiBold;
+            src: url('../fonts/Fredoka/static/Fredoka-SemiBold.ttf') format("truetype");
+        }
+
+        @font-face {
+            font-family: FredokaBold;
+            src: url('../fonts/Fredoka/static/Fredoka-Bold.ttf') format("truetype");
+        }
+/* ----------------------------------------------- */
+    /* main digital body */
+        html {
+            font-family: 'BuilderSansLight';
+            font-size: 15px;
+            color: #005aff;
+        }
+
+        body {
+            padding: 0;
+            overflow-wrap: break-word;
+        }
+/* ----------------------------------------------- */
+    /* links */
+        a {
+            color: #0070ff;
+            font-weight: bold;
+            text-decoration-style: dotted;
+            
+            &:hover {
+                color: #00b5ff;
+            }
+            
+            &:active {
+                color: cyan;
+            }
+            
+            &:visited {
+                color: #0001d8;
+                &:hover {
+                    color: #0057da;
+                }
+            }
+        }
+/* ----------------------------------------------- */
+    /* headings */
+        h1, h2, h3, h4 {
+            font-style: italic;
+        }
+
+        h2, h3, h4 {
+            font-family: 'FredokaSemiBold';
+            margin: 5 auto;
+        }
+
+        h1 {
+            font-family: 'FredokaBold';
+            font-style: italic;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+
+/* ----------------------------------------------- */
+    ul {
+        list-style-type: '🟆 ';
+        margin: 5;
+    }
+/* ----------------------------------------------- */
+    .divider {
+        content:url(../graphix/dividers/scissors2.gif);
+        width: 100%;
+        text-align: center;
+    }

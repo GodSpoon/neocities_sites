@@ -1,0 +1,138 @@
+/* Start https://www.cursors-4u.com */
+    * { cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1113.cur), default; }
+    a { cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), pointer; }
+
+/* End https://www.cursors-4u.com */
+/*---------------------------------------------------------*/
+/* scrollbar... Firefox bc Firefox is GOD! */
+    * {scrollbar-width: thin;
+       scrollbar-color: #6394ff #a5e1ff;}
+
+    /* ...But for Chrome, Edge, Safari */
+    *::-webkit-scrollbar {width: 8px;}
+    *::-webkit-scrollbar-track {background: #9ad8ff;}
+    *::-webkit-scrollbar-thumb {background-color: #6394ff; border-radius: 4px; border: 3px solid #ffffff;}
+/* ----------------------------------------------- */
+/* highlights */
+    mark {
+        background-image: radial-gradient(#f2fbff, #4bc9ff);
+        color: #0059cd;
+        font-weight: 600;
+    }
+
+    ::selection {
+        color: #99ecff;
+        text-shadow: -1px -1px 0 #1a74ff, 1px -1px 0 #1a74ff, -1px 1px 0 #1a74ff, 1px 1px 0 #1a74ff,
+            0px 0px 5px #1a74ff, 0px 0px 5px #1a74ff, 0px 0px 5px #1a74ff;
+    }
+/* ----------------------------------------------- */
+/* fonts */
+    /* BuilderSans */
+        @font-face {
+            font-family: BuilderSansLight;
+            src: url(../fonts/Builder_Sans/BuilderSans-Light-300.otf) format("opentype");
+        }
+
+
+        @font-face {
+            font-family: BuilderSans;
+            src: url(../fonts/Builder_Sans/BuilderSans-Medium-500.otf) format("opentype");
+        }
+
+
+    /* Fredoka */
+        @font-face {
+            font-family: FredokaSemiBold;
+            src: url('../fonts/Fredoka/static/Fredoka-SemiBold.ttf') format("truetype");
+        }
+
+        @font-face {
+            font-family: FredokaBold;
+            src: url('../fonts/Fredoka/static/Fredoka-Bold.ttf') format("truetype");
+        }
+/* ----------------------------------------------- */
+    /* main digital body */
+        html {
+            font-family: 'BuilderSansLight';
+            font-size: 15px;
+            color: #005aff;
+        }
+
+        body {
+            padding: 0;
+            overflow-wrap: break-word;
+        }
+
+/* ----------------------------------------------- */
+    /* headings */
+        h1 {
+            font-family: 'FredokaBold';
+            font-style: italic;
+            margin: 0;
+        }
+
+        h2, h3, h4 {
+            font-family: 'FredokaSemiBold';
+            margin: 5;
+        }
+
+        h2 {
+            font-size: 17px;
+            font-style: italic;
+        }
+/* ----------------------------------------------- */
+    br {
+        font-size: 4px;
+    }
+/* ----------------------------------------------- */
+    .divider {
+        content:url(../graphix/dividers/scissors2.gif);
+        width: 100%;
+        text-align: center;
+    }
+/* ----------------------------------------------- */
+    /* gallery */
+        .gallery {
+            flex-wrap: wrap;
+            display: flex;
+            gap: 5px;
+            .pic {
+                position: relative;
+                img {
+                    opacity: 70%;
+                    height: 82px;
+                    border: 1.5px solid #1a74ff;
+                    border-radius: 7px;
+                    filter: brightness(1.1) grayscale(0.2) saturate(1.5);
+
+                    &:hover {
+                        opacity: 100%;
+                        filter: drop-shadow(0px 0px 6px #27a3ff);
+                        transform: scale(1.1);
+                        object-fit: cover;
+                        cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), pointer;
+                    }
+                }
+
+                &:hover span.g-text {
+                    display: block;
+                }
+            }
+        }
+
+        .g-text {
+            display: none;
+            position: absolute; 
+            z-index:100;
+
+            background-color: azure;
+            border: 1px solid blue;
+            border-radius: 7px;
+            padding: 3px;
+            color: blue;
+            top: 50px; 
+            left: 88px;
+            font-size: 12px;
+            width: 110%;
+            text-align: left;
+        }

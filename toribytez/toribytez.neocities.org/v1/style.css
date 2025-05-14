@@ -1,0 +1,342 @@
+/* CSS */
+
+/* Start https://www.cursors-4u.com */
+    * {cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1113.cur), default;}
+    a {cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), auto;}
+    img:hover {
+        cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), auto;
+    }
+/* End https://www.cursors-4u.com */
+
+/*----------------------------------------------------------------------------------------------*/
+/* scrollbar... Firefox bc Firefox is GOD! */
+    * {scrollbar-width: thin;
+       scrollbar-color: #245dda #9ad8ff;}
+
+/* ...But for Chrome, Edge, Safari, the like??! Idk I don't use these. */
+    *::-webkit-scrollbar {width: 8px;}
+    *::-webkit-scrollbar-track {background: #9ad8ff;}
+    *::-webkit-scrollbar-thumb {background-color: #245dda; border-radius: 4px; border: 3px solid #ffffff;}
+    
+/*----------------------------------------------------------------------------------------------*/
+/* fonts */
+    /* BuilderSans */
+        @font-face {
+            font-family: BuilderSansLight;
+            src: url(../fonts/Builder_Sans/BuilderSans-Light-300.otf) format("opentype");
+        }
+
+
+        @font-face {
+            font-family: BuilderSans;
+            src: url(../fonts/Builder_Sans/BuilderSans-Medium-500.otf) format("opentype");
+        }
+
+        @font-face {
+            font-family: BuilderSansSemiBold;
+            src: url(../fonts/Builder_Sans/BuilderSans-SemiBold-600.otf) format("opentype");
+        }
+
+    /* Fredoka */
+        @font-face {
+            font-family: FredokaSemiBold;
+            src: url('../fonts/Fredoka/static/Fredoka-SemiBold.ttf') format("truetype");
+        }
+
+        @font-face {
+            font-family: FredokaBold;
+            src: url('../fonts/Fredoka/static/Fredoka-Bold.ttf') format("truetype");
+        }
+
+/*----------------------------------------------------------------------------------------------*/
+    /* wraps the entire site */
+        #container {
+            max-width: 910px;
+            /* layout width */
+            margin-left: auto;
+            margin-right: auto;
+            margin: 100 auto;
+            /* this centers the entire page */
+            overflow-wrap: break-word;
+        }
+
+        #container a {
+            color: #0001d8;
+            font-weight: bold;
+            text-decoration-style: dotted;
+
+        }
+        
+        #container a:hover {
+            color: #4c68ff;
+            font-weight: bold;
+            text-decoration-style: dotted;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .flex {
+            display: flex;
+            position: relative;
+        }
+
+/*---------------------------------------------------------*/
+/* highlights */
+    mark {
+        background-image: radial-gradient(#f2fbff, #69d2ff);
+        color: #0059cd;
+        font-weight: 600;
+    }
+
+    ::selection {
+    color: #99ecff;
+    background: #467eff;
+    }
+
+/*---------------------------------------------------------*/
+    /* the human body */
+        /* head area */
+            #header {
+                border: 3px solid #3875f2;
+                border-radius: 15px 15px 0px 0px;
+                width: 100%;
+                background-color: #3875F2;
+                height: 95px;
+                background-image: url(../graphix/bgs/checkered.gif);
+                background-size: 5.5%;
+                display:flex;
+                justify-content:center;
+                }
+
+            #logo {
+                display: inline-flex;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                max-height:95px;
+                filter: drop-shadow(2px 2px 3px #0001d8);
+                transition: filter 0.5s;
+                #toribytez {
+                    content:url(../art/branding/logo.png);
+                    max-width: 230px;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+                
+                &:hover {
+                    transform:scale(1.1);
+                    filter: drop-shadow(2px 2px 3px #c4e7ff);
+                    object-fit:contain;
+                }
+            }
+            
+        /* body */
+            body {
+                font-family: 'BuilderSansLight';
+                margin: 0;
+                background-color: #6bcdff;
+                background-size: 65px;
+                color: #3600ff;
+                background-image:url('../graphix/bgs/checkered.gif'); background-attachment: fixed;
+            }
+
+        /* legs */
+            footer {
+                border: solid #3875f2;
+                background-color: #3875f2;
+                width: 100%;
+                max-width: 910;
+                height: auto;
+                text-align: center;
+                margin-top: 10px;
+                position: relative;
+                
+                a {
+                    color: #0001d8;
+                    font-weight: bold;
+                    text-decoration-style: dotted;
+                    &:hover {
+                      color: #4c68ff;
+                      text-decoration: underline;
+                    }
+                }
+                
+            }
+            
+            p.footer {
+                color:white;
+                font-size:10px;
+            }
+
+/*---------------------------------------------------------*/
+    /* navigation section!! */
+        #navbar {
+            font-family: 'FredokaSemiBold';
+            height: 40px;
+            background-color: #3875F2;
+            /* navbar color */
+            width: 100%;
+            ul {
+                display: flex;
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+                justify-content: space-evenly;
+                width: 100%;
+            }
+            li {
+                display: flex;
+                padding-top: 10px;
+                font-size: medium;
+                font-style: normal;
+                align-content: center;
+                justify-content: space-evenly;
+                list-style-type: none;
+                list-style-image: none;
+                
+                a {
+                    color: #a8f0ff;
+                    /* navbar text color */
+                    font-weight: 800;
+                    text-decoration: none;
+                    
+                    &:hover {
+                          color: #66e8ff;
+                          text-decoration: underline;
+                    }
+                }
+            }
+        }
+        
+/*---------------------------------------------------------*/
+    /* main content area */
+        main {
+            border: 3px solid #3875f2;
+            background-color: #deedff;
+            position: relative;
+            flex: 1;
+            padding: 5px;
+            order: 2;
+            overflow-wrap: break-word;
+        }
+
+        .main__inner {
+            width: 100%;
+        }
+
+    /* sidebars */
+        aside {
+            border: 3px solid #3875f2;
+            background-color: #deedff;
+            width: 200px;
+            padding: 5px;
+            font-size: smaller;
+            position: relative;
+            
+            li a:hover {
+                color: #4c68ff;
+                text-decoration: underline;
+            }
+        }
+
+        aside.left {
+            order: 1;
+        }
+
+        aside.right {
+            order: 3;
+        }
+
+/* heading */
+
+    h1, h2, h3 {
+      font-weight: 300;
+      color: #001cff;
+      font-style: italic;
+    }
+    
+    
+    h1 {
+        font-size: 25px;
+        font-family: 'FredokaBold';
+    }
+    
+    h2, h3 {
+        font-family: 'FredokaSemiBold';
+    }
+    
+/*----------------------------------------------------------------------------------------------*/
+/* CSS for extras */
+    /* dividers */
+    .divider {
+        content:url(../graphix/dividers/scissors2.gif);
+        width:100%;
+    }
+
+    .divider2 {
+        content:url(../graphix/dividers/bow.png);
+        width:100%;
+    }
+
+    /* table */
+    table, th, td {
+        border: 3.5px groove #3875f2;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+
+    /* plus a scrollbox!! */
+        /* for scrollbox headers */
+        .headdy {
+            background-color: #deedff;
+            position: sticky;
+            top: -13;
+            width: 100%;
+        }
+    
+        .scrollbox {
+            border: 3px solid #3875f2;
+            background-color: #deedff;                
+            display: flex;
+            flex-direction: column;
+                
+            overflow-y: scroll;
+            scrollbar-color: #245dda #9ad8ff;
+            scrollbar-width: thin;
+            scrollbar-gutter: stable;
+            padding: 10px;
+            height: auto;
+            overflow-wrap: break-word;
+        }
+        
+    /*---------------------------------------------------------*/
+    /* gallery */
+        .gallery {
+            padding: 5;
+            display: flex;
+            flex-wrap: no-wrap;
+            width: 100%;
+            height: 110px;
+            
+            img {
+                width:100px;
+                height:100px;
+                object-fit:cover;
+                border: 4px ridge #0054ff;
+                
+                &:hover {
+                    transform:scale(1.1);
+                    border: 5px ridge #0054ff;
+                }
+            }
+        }
+        
+        /* crops imgs */
+        .gallery > div {
+            margin: 0 5;
+            width:100px;
+            height:100px;
+        }

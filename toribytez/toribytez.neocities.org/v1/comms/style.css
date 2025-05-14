@@ -1,0 +1,115 @@
+/* CSS */
+/* Start https://www.cursors-4u.com */
+    * {cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1113.cur), default;}
+    a {cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), auto;}
+    img:hover {
+        cursor: url(https://cur.cursors-4u.net/games/gam-12/gam1112.cur), auto;
+    }
+/* End https://www.cursors-4u.com */
+/*---------------------------------------------------------*/
+/* fonts */
+    /* BuilderSans */
+        @font-face {
+            font-family: BuilderSansLight;
+            src: url(../../fonts/Builder_Sans/BuilderSans-Light-300.otf) format("opentype");
+        }
+
+
+        @font-face {
+            font-family: BuilderSans;
+            src: url(../../fonts/Builder_Sans/BuilderSans-Medium-500.otf) format("opentype");
+        }
+
+        @font-face {
+            font-family: BuilderSansSemiBold;
+            src: url(../../fonts/Builder_Sans/BuilderSans-SemiBold-600.otf) format("opentype");
+        }
+
+    /* Fredoka */
+        @font-face {
+            font-family: FredokaSemiBold;
+            src: url('../../fonts/Fredoka/static/Fredoka-SemiBold.ttf') format("truetype");
+        }
+
+        @font-face {
+            font-family: FredokaBold;
+            src: url('../../fonts/Fredoka/static/Fredoka-Bold.ttf') format("truetype");
+        }
+/*---------------------------------------------------------*/
+    /* highlights */
+        mark {
+            background-image: radial-gradient(#f2fbff, #69d2ff);
+            color: #0059cd;
+            font-weight: 600;
+        }
+
+        ::selection {
+        color: #99ecff;
+        background: #467eff;
+        }
+/*---------------------------------------------------------*/
+/* scrollbars */
+    /* scrollbar... Firefox bc Firefox is GOD! */
+        * {scrollbar-width: thin;
+           scrollbar-color: #245dda #9ad8ff;}
+
+    /* ...But for Chrome, Edge, Safari, the like??! */
+        *::-webkit-scrollbar {width: 8px;}
+        *::-webkit-scrollbar-track {background: #9ad8ff;}
+        *::-webkit-scrollbar-thumb {background-color: #245dda; border-radius: 4px; border: 3px solid #ffffff;}
+/*---------------------------------------------------------*/
+    /* the human body */
+        /* body */
+            body {
+                font-family: 'BuilderSansLight';
+                margin: 0;
+                background-color: #deedff;
+                background-size: 65px;
+                color: #3600ff;
+                padding: 10;
+            }
+/*---------------------------------------------------------*/
+/* heading */
+    h1, h2, h3 {
+        font-family: 'FredokaSemiBold';
+        font-weight: 300;
+        color: #001cff;
+        font-style: italic;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+/*----------------------------------------------------------------------------------------------*/
+/* CSS for extras */
+    /* table */
+    table, th, td {
+        border: 3.5px groove #3875f2;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+
+    /* divider */
+    .divider {
+        content:url(../../graphix/dividers/scissors2.gif);
+        width: 100%;
+        display: block;
+        margin: 5 auto;
+    }
+/*---------------------------------------------------------*/
+/* links */
+    a:visited {
+        color: #000abe;
+    }
+
+    a:hover {
+        color: #0946ff;
+        font-weight: bold;
+        text-decoration-style: dotted;
+    }
+
+    a {
+        color: #0001d8;
+        font-weight: bold;
+        text-decoration-style: dotted;
+    }

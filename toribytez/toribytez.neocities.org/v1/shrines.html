@@ -1,0 +1,233 @@
+<head>
+    <title>SHRINES - toribytez✦ // (INTER).face</title>
+    <link rel="icon" type="image/x-icon" href="../art/branding/sigil.png">
+    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div.main__inner {
+            ul {
+                padding: 0;
+                list-style-type:none;
+                li {
+                    list-style-type:none;
+                }
+            }
+        }
+        
+        h3 {
+            margin: 5 auto;
+            &::before {
+                content: url(../graphix/favicons/swirl1.gif);
+                margin-right: 5px;
+            }
+            &::after {
+                content: url(../graphix/favicons/swirl1.gif);
+                margin-left: 5px;
+            }
+        }
+        
+        details {
+            summary {
+                font-family: 'FredokaSemiBold';
+                font-weight: 300;
+                font-size: 20px;
+                color: #001cff;
+                font-style: italic;
+            }
+        }
+    </style>
+<!------------------ <3 --------------------->
+    <!-- cursor effect -->
+    <!-- OG code from DHTML; modded by jadd (https://proto.re) -->
+    <style type="text/css">
+      :root {
+        --bubble-border-top-color: #a6f;
+        --bubble-border-right-color: #60f;
+        --bubble-border-bottom-color: #60f;
+        --bubble-border-left-color: #a6f;
+        --bubble-background-color: #ccc;
+        --bubble-background-opacity: 50%;
+        --bubble-z-index: 1001;
+      }
+
+      .bubble {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: var(--bubble-z-index);
+        background: rgb(from var(--bubble-background-color) r g b / var(--bubble-background-opacity));
+        border: 1px solid;
+        border-top-color: var(--bubble-border-top-color);
+        border-right-color: var(--bubble-border-right-color);
+        border-bottom-color: var(--bubble-border-bottom-color);
+        border-left-color: var(--bubble-border-left-color);
+        border-radius: 100%;
+      }
+    </style>
+    <script type="text/javascript">
+      const MAX_BUBBLE_COUNT = 66;
+
+      //
+      // BEHOLD THE MAGIC
+      // 
+      const bubbles = [];
+      let isAnimating = false;
+      let canSpawnBubble = true;
+      let splashTimeout;
+
+      document.addEventListener('DOMContentLoaded', onLoad);
+
+      function onLoad() {
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mousedown', onMouseDown);
+        document.addEventListener('mouseup', onMouseUp);
+      }
+
+      function onMouseMove(event) {
+        spawnBubble(event.clientX, event.clientY);
+      }
+
+      function onMouseDown(event) {
+        splash(event.clientX, event.clientY);
+      }
+
+      function onMouseUp(event) {
+        clearTimeout(splashTimeout);
+      }
+
+      function splash(x, y) {
+        spawnBubble(x, y);
+        splashTimeout = setTimeout(() => {
+        splash(x, y);
+        }, 100);
+      }
+
+      function spawnBubble(x, y) {
+        if (!canSpawnBubble) return;
+        canSpawnBubble = false;
+
+        if (bubbles.length >= MAX_BUBBLE_COUNT) popBubble(0);
+
+        const div = document.createElement('div');
+        div.classList.add('bubble');
+        document.body.appendChild(div);
+        const bubble = {
+          div,
+          x,
+          y: y - 3,
+          s: 3
+        }
+        bubbles.push(bubble);
+        animate();
+
+        setTimeout(() => {
+        canSpawnBubble = true
+        }, 40);
+      }
+
+      function popBubble(i) {
+        if (bubbles.length <= i) return;
+        const bubble = bubbles.splice(i, 1)[0];
+        bubble.div.remove();
+      }
+
+      function animate() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        setTimeout(() => {
+        requestAnimationFrame(() => {
+        isAnimating = false;
+
+        const w = document.documentElement.clientWidth;
+        const h = document.documentElement.clientHeight;
+
+        for (let i = 0; i < bubbles.length; i++) {
+          const bubble = bubbles[i];
+          bubble.y -= bubble.s / 2 + i % 2;
+          bubble.x += (i % 5 - 2) / 5;
+
+          if (bubble.x < -bubble.s || bubble.x >= w || bubble.y < -bubble.s || bubble.y >= h) {
+            popBubble(i);
+            continue;
+          }
+          if (Math.random() < bubble.s / h * 2 && bubble.s < 7) {
+            bubble.s += 1;
+            bubble.div.style.width = `${bubble.s}px`;
+            bubble.div.style.height = `${bubble.s}px`;
+            }
+            bubble.div.style.translate = `${bubble.x}px ${bubble.y}px`;
+        }
+
+          if (bubbles.length) {
+            animate();
+          }
+        });
+      }, 40);
+    }
+  </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="headerArea" style="position: relative;">
+            <div id="header">
+                <div id="logo">
+                    <a href="index.html">
+                        <div id="toribytez"></div>
+                    </a>
+                </div>
+                <img src="../graphix/characters/rei3.gif" style="position: absolute; right: 55; top: -92px;">
+            </div>
+            <nav id="navbar" style="margin-bottom: 10px;">
+                <ul>
+                    <li><a href="who.html">Who?</a></li>
+                    <li><a href="gallery.html">Artworks</a></li>
+                    <li><a href="to-do.html">To-do</a></li>
+                    <li><a href="shrines.html">Shrines</a></li>
+                    <li><a href="graphix.html">Graphix</a></li>
+                    <li><a href="links.html">Links</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+      
+        <div class="flex" style="position: relative; margin-top: 10px; height: 400px; overflow: hidden;">    
+
+            <aside class="left" style="width: 15%; margin-right: 10px; background-image:url(../graphix/bgs/water.gif)"></aside>
+            
+            <main>
+                <div class="main__inner" style="text-align: center;">
+                    <div class="headdy" style="padding-top: 5">
+                    <h1 style="margin-bottom: 5">Shrines</h1>
+                    </div>
+                    <div class="divider"></div>
+                    <p style="margin: 5 auto">This is the landing page for my digital webshrines, all made with love towards specific media or characters! Enjoy! &#128153;</p>
+                    <p style="margin: 5 auto">Keep in mind that additional shrines will be added in the future.</p>
+                    <div style="padding: 0; display: flex; flex-direction:row; justify-content: space-evenly">
+                        <div class="list">
+                            <h3>Characters</h3>
+                            <ul style="margin: 5 auto">
+                                <li><a href="../shrines/blueexec.html">Blue Executive</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="list">
+                            <h3>Media</h3>
+                            <ul style="margin: 5 auto">
+                                <li>DJ Sharpnel <small>(Coming Soon)</small></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+            <aside class="right" style="width: 15%; margin-left: 10px; background-image:url(../graphix/bgs/water.gif)"></aside>
+        </div>
+
+        <footer id="footer">
+            <p class="footer">toribytez, 2024<br>Heavily modified from <a href="https://goblin-heart.net/sadgrl/projects/layout-builder/">Sadgrl's Layout Builder</a></p>
+        </footer>
+    </div>
+</body>

@@ -1,0 +1,662 @@
+<head>
+    <title>LINKS - toribytez✦ // (INTER).face</title>
+    <link rel="icon" type="image/x-icon" href="../art/branding/sigil.png">
+    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h2 {
+            margin: 0;
+            font-size: 25;
+        }
+        
+        span {
+            font-family: 'FredokaSemiBold'; 
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: 3875f2;
+            text-align: center;
+        }
+        
+        aside.scrollbox {
+            img {
+                width: 88px;
+                &:hover {
+                    transform:scale(1.1);
+                    object-fit:contain;
+                }
+            }
+        }
+        
+        /* ---------------------------------------------- */
+        #socmed {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            text-align: center;
+            margin: 10 auto;
+            
+            img:hover {
+                transform:scale(1.1);
+                object-fit:contain;
+            }
+        }
+        /*---- extra links box for other neosites and stuff ----*/
+        #otherlinx {
+            padding: 10px;
+            height: auto;
+            width: 100%;
+            border: 3px solid #3875f2;
+            background-color: #deedff;                
+            display: flex;
+            flex-direction: row;
+            img {
+                height: 31px;
+            }
+        }
+        
+        #xtra {
+            margin-top: 10;
+            height: 65px;
+            width: 100%;
+            border: 3px solid #3875f2;
+            background-image: url(../graphix/bgs/water.gif);
+            display: flex;
+            flex-direction: row;
+        }
+        /*------- marquee; credit to SaltyDracon for the og code; modified by me -------*/
+        .marquee {
+            margin-top: 10px;
+            height: auto;
+            width: 100%;
+            border: 3px solid #3875f2;
+            background-color: #deedff;                
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .button {
+            height: 31px;
+            margin: 3px;
+            img {
+                &:hover {
+                    transform:scale(1.1);
+                    object-fit: contain;
+                }
+            }
+        }
+        
+        .marqueecontainer {
+            width: 100%;
+            overflow: hidden;
+            .scroller {
+                width: fit-content;
+                min-width: auto;
+                padding-left: 100%;
+                display: flex;
+                flex-direction: row;
+                animation: horizMarquee 20s linear infinite;
+                &:hover {
+                    animation-play-state: paused;
+                }
+            }
+        }
+        @keyframes horizMarquee {
+            100% {
+                transform: translate(-100%, 0);
+            }
+        }
+        
+      /* left-to-right code modded by me!! */
+        .rightmarquee {
+            margin: 5 auto;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            .scrollerRight {
+                width: fit-content;
+                min-width: auto;
+                padding-left: 100%;
+                display: flex;
+                flex-direction: row;
+                animation: horizMarquee2 20s linear infinite;
+                &:hover {
+                animation-play-state: paused;
+                }
+            }
+        }
+
+        @keyframes horizMarquee2{
+          0% {
+            transform: translate(-100%); 
+          }
+        }
+    </style>
+<!------------------ <3 --------------------->
+    <!-- cursor effect -->
+    <!-- OG code from DHTML; modded by jadd (https://proto.re) -->
+    <style type="text/css">
+      :root {
+        --bubble-border-top-color: #a6f;
+        --bubble-border-right-color: #60f;
+        --bubble-border-bottom-color: #60f;
+        --bubble-border-left-color: #a6f;
+        --bubble-background-color: #ccc;
+        --bubble-background-opacity: 50%;
+        --bubble-z-index: 1001;
+      }
+
+      .bubble {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: var(--bubble-z-index);
+        background: rgb(from var(--bubble-background-color) r g b / var(--bubble-background-opacity));
+        border: 1px solid;
+        border-top-color: var(--bubble-border-top-color);
+        border-right-color: var(--bubble-border-right-color);
+        border-bottom-color: var(--bubble-border-bottom-color);
+        border-left-color: var(--bubble-border-left-color);
+        border-radius: 100%;
+      }
+    </style>
+    <script type="text/javascript">
+      const MAX_BUBBLE_COUNT = 66;
+
+      //
+      // BEHOLD THE MAGIC
+      // 
+      const bubbles = [];
+      let isAnimating = false;
+      let canSpawnBubble = true;
+      let splashTimeout;
+
+      document.addEventListener('DOMContentLoaded', onLoad);
+
+      function onLoad() {
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mousedown', onMouseDown);
+        document.addEventListener('mouseup', onMouseUp);
+      }
+
+      function onMouseMove(event) {
+        spawnBubble(event.clientX, event.clientY);
+      }
+
+      function onMouseDown(event) {
+        splash(event.clientX, event.clientY);
+      }
+
+      function onMouseUp(event) {
+        clearTimeout(splashTimeout);
+      }
+
+      function splash(x, y) {
+        spawnBubble(x, y);
+        splashTimeout = setTimeout(() => {
+        splash(x, y);
+        }, 100);
+      }
+
+      function spawnBubble(x, y) {
+        if (!canSpawnBubble) return;
+        canSpawnBubble = false;
+
+        if (bubbles.length >= MAX_BUBBLE_COUNT) popBubble(0);
+
+        const div = document.createElement('div');
+        div.classList.add('bubble');
+        document.body.appendChild(div);
+        const bubble = {
+          div,
+          x,
+          y: y - 3,
+          s: 3
+        }
+        bubbles.push(bubble);
+        animate();
+
+        setTimeout(() => {
+        canSpawnBubble = true
+        }, 40);
+      }
+
+      function popBubble(i) {
+        if (bubbles.length <= i) return;
+        const bubble = bubbles.splice(i, 1)[0];
+        bubble.div.remove();
+      }
+
+      function animate() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        setTimeout(() => {
+        requestAnimationFrame(() => {
+        isAnimating = false;
+
+        const w = document.documentElement.clientWidth;
+        const h = document.documentElement.clientHeight;
+
+        for (let i = 0; i < bubbles.length; i++) {
+          const bubble = bubbles[i];
+          bubble.y -= bubble.s / 2 + i % 2;
+          bubble.x += (i % 5 - 2) / 5;
+
+          if (bubble.x < -bubble.s || bubble.x >= w || bubble.y < -bubble.s || bubble.y >= h) {
+            popBubble(i);
+            continue;
+          }
+          if (Math.random() < bubble.s / h * 2 && bubble.s < 7) {
+            bubble.s += 1;
+            bubble.div.style.width = `${bubble.s}px`;
+            bubble.div.style.height = `${bubble.s}px`;
+            }
+            bubble.div.style.translate = `${bubble.x}px ${bubble.y}px`;
+        }
+
+          if (bubbles.length) {
+            animate();
+          }
+        });
+      }, 40);
+    }
+  </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="headerArea" style="position: relative;">
+            <div id="header">
+                <div id="logo">
+                    <a href="index.html">
+                        <div id="toribytez"></div>
+                    </a>
+                </div>
+                <img src="../graphix/characters/rei3.gif" style="position: absolute; right: 55; top: -92px;">
+            </div>
+            <nav id="navbar" style="margin-bottom: 10px;">
+                <ul>
+                    <li><a href="../who.html">Who?</a></li>
+                    <li><a href="gallery.html">Artworks</a></li>
+                    <li><a href="to-do.html">To-do</a></li>
+                    <li><a href="shrines.html">Shrines</a></li>
+                    <li><a href="graphix.html">Graphix</a></li>
+                    <li><a href="links.html">Links</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="flex" style="height: 330px">
+            <aside class="left" style="width: 127px; position: relative; overflow-wrap: break-word; padding: 10">
+                <h2>Find me!!</h2>
+                <div id="socmed">
+                    <a href="https://neocities.org/site/toribytez"><img src="../graphix/buttons/links/neocitiesblue.gif"></a>
+                    <a href="mailto:toribytez@gmail.com"><img src="../graphix/buttons/mine/email.gif"></a>
+                    <a href="https://ko-fi.com/toribytez"><img src="../graphix/buttons/mine/kofi2.png"></a>
+                    <a href="https://toribytez.bsky.social"><img src="../graphix/buttons/mine/bsky.png"></a>                   
+                    <a href="https://sheezy.art/toribytez"><img src="../graphix/buttons/mine/sheezy.jpg"></a>
+                    <a href="https://www.tumblr.com/2200n"><img src="../graphix/buttons/mine/tumblr.png"></a>
+                    <img src="../graphix/misc/computer_7.gif" style="margin-top: 29px; transform: none">
+                </div>
+            </aside>
+            
+            <main style="margin-left: 10; flex-direction: column; display: flex; padding: 10">
+                <span>
+                    <a href="linx/resources.html" target="linx">Resources</a>
+                    &#128964;
+                    <a href="linx/art.html" target="linx">Art</a>
+                    &#128964;
+                    <a href="linx/fun.html" target="linx">Fun</a>
+                    &#128964;
+                    <a href="linx/custom.html" target="linx">Customization</a>
+                    &#128964;
+                    <a href="linx/misc.html" target="linx">Misc.</a>
+                </span>
+                
+                <iframe
+                    src="linx/resources.html" name="linx"
+                    style="border: 3px solid #3875f2;"
+                    width="100%"
+                    height="100%"
+                    title="">
+                </iframe>
+                
+<img src="../graphix/icons/xp/win.gif" style="width: 41px; position: absolute; top: -11; left: -30;">
+            </main>
+        </div>
+        
+        <div class="marquee" style="display: flex; flex-direction: column; padding: 4">
+            <div style="display: flex; flex-direction: row; padding: 5">
+                <h2>Various Sites</h2>
+                <p style="margin: 6">(including archived)</p>
+            </div>
+            <div class="marqueecontainer">
+                <div class="scroller">
+                    <div class="button">
+                        <a href="https://web.archive.org/web/20010404055542/http://www.din.or.jp/~niieichi/"><img src="../graphix/buttons/links/2h-banner.gif"></a>
+                    </div>
+                    <div class="button">
+                      <a href="https://alecwest.co/"><img src="https://c-p.rmcdn.net/66ace969d189d8142c514062/4924284/Image-0c2fbf07-4698-4f05-9589-a675fb0a008c.gif" height=31px></a>
+                    </div>
+
+                    <div class="button">
+                        <a href="https://www.mozilla.org/en-US/firefox/new/"><img src="../graphix/buttons/links/firefoxget.gif"></a>
+                    </div>
+
+                    <div class="button">
+                        <a href="http://futureexpress.net/"><img src="../graphix/buttons/links/fe9_banner01.gif"></a>
+                    </div>
+
+                    <div class="button">
+                        <a href="https://flashpointarchive.org/"><img src="../graphix/buttons/links/flashpoint.gif"></a>
+                    </div>
+                    
+                    <div class="button">
+                        <a href="https://lolicore.net/"><img src="../graphix/buttons/links/lolicorenet.gif"></a>
+                    </div>
+                    
+                    <div class="button">
+                        <a href="http://www.matthewfurman.net/"><img src="http://www.matthewfurman.net/matthew_now.gif"></a>
+                    </div>
+
+                    <div class="button">
+                        <a href="https://nammac.com/"><img src="https://c-p.rmcdn.net/66ba79e6849fcfb18dba2be8/4943482/Image-11745a31-8219-4bcf-8437-b659af3e7c6f.gif" height="31px"></a>
+                    </div>
+
+                    <div class="button">
+                        <a href="https://web.archive.org/web/20040810075314/http://www.nihonkokumin.com/"><img src="https://web.archive.org/web/20040810075314im_/http://www.nihonkokumin.com/img/m_rogo.gif"></a>
+                    </div>
+
+                    <div class="button">
+                        <a href="http://www.rowdyruff.net"><img src="../graphix/buttons/links/rrnet_button.gif"></a>
+                    </div>
+                    
+                    <div class="button">
+                        <a href="http://www.suppi.net/"><img src="https://suppi.net/x/snet1.gif"></a>
+                    </div>
+                    
+                    <div class="button">
+                        <a href="https://sharpnel.com/index-j.html"><img src="https://sharpnel.com/image/SHARPNELSOUND_BN.jpg" height="31px"></a>
+                    </div>
+                    
+                    <div class="button">
+                        <a href="https://status.cafe"><img src="https://status.cafe/assets/button.png" alt="Status Cafe"/></a>
+                    </div>
+
+                    <div class="button">
+                        <a href="http://theoldnet.com/"><img src="http://theoldnet.com/images/theoldnetanimblur2.gif"></a>
+                    </div>
+
+                    <div class="button">
+                        <a href="https://getwacup.com/"><img src="../graphix/buttons/mine/wacupnow.png"></a>
+                    </div>
+
+                    <div class="button">
+                        <a href="https://wiby.me"><img src="https://wiby.me/about/wiby.gif"></a>
+                    </div>
+
+                    <div class="button">
+                        <a href="http://web.archive.org/web/19961023235157/http://www2.windows95.com/"><img src="http://web.archive.org/web/19961023235157im_/http://www2.windows95.com/gifs/w95com.gif" height="31px"></a>
+                    </div>
+
+                    <div class="button">
+                        <a href="https://www.win-rar.com/start.html?&L=0"><img src="../graphix/buttons/links/winrar.jpg"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex" style="margin-top: 10px;">
+            <aside class="scrollbox" style="width: 433px; height: 255.2px">
+                <h2>Friends/Mutuals</h2>
+                <p>
+                If you wish to be linked, please DM me on any of my listed links, or just <a href="mailto:toribytez@gmail.com">email me!</a> Discord is also an option if we're close.<br><small>(Must not be a social media page, Linktree, Carrd, Strawpage, Rentry, or any of its clones)</small>
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 5px; justify-content: center;">
+                    <a href="https://americasdecline.neocities.org/"><img src="https://americasdecline.neocities.org/img/mb/42b03.png"></a>
+                    <a href="https://atari404.neocities.org/" target="_blank"><img src="https://atari404.neocities.org/website%20button.gif"></a>
+                    <a href="https://arcoleiris.neocities.org/"><img src="https://i.postimg.cc/KjJhxZwF/button.png"></a>
+                    <a href="https://avq.neocities.org/" target="_blank"><img alt="AVQ's Homepage" title="AVQ's Homepage" src="https://avq.neocities.org/assets/AVQ88x31.gif"></a>
+                    <a href="https://brawlersworld.com/"><img src="../graphix/buttons/links/brawler.gif"></a>
+                    <a href="https://daffodyl.neocities.org/"><img src="https://daffodyl.neocities.org/banner.png"></a>
+                    <a href="https://mukkysworld.neocities.org/"><img src="../graphix/buttons/links/MukkysWorld_Button.gif"></a>
+                    <a href="https://soulmaze.neocities.org/"><img src="https://soulmaze.neocities.org/images/soulmazebanner.gif"></a>
+                    <a href="https://unevenprankster.xyz/"><img src="https://unevenprankster.neocities.org/res/uneven_button.png" title="Uneven Prankster"></a>
+                </div>
+            </aside>
+            <div style="display: flex; flex-direction: column; width: 65%; margin-left: 10;">
+                <div id="otherlinx" style="display: flex; flex-direction: column; padding: 10;">
+                    <h2 style="margin-bottom: 5">Other Cool NeoSites</h2>
+                    <div class="marqueecontainer">
+                        <div class="scroller">
+                            <div class="button">
+                                <a href="https://99gifshop.neocities.org/"><img src="https://99gifshop.neocities.org/img/88x31.4.png"></a>
+                            </div>
+                            
+                            <div class="button">
+                                <a href="https://antikrist.lol/"><img src="../graphix/buttons/links/antikristnewbutton2.png"></a>
+                            </div>
+                            
+                            <div class="button">
+                                <a href="https://awababa.win/"><img src="https://awababa.win/images/buttons/sitebutton.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://billsworld.neocities.org/"><img src="../graphix/buttons/links/billsworld.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://bettysgraphics.neocities.org/"><img src="../graphix/buttons/links/bettysgraphics.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://christinee.neocities.org"> <img src="https://christinee.neocities.org/button.png"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://cinni.net"><img src="https://cinni.net/images/cinni_button.2.png"></a>
+                            </div>
+                            
+                            <div class="button">
+                                <a href="https://crystalsweb.neocities.org/"><img src="../graphix/buttons/links/crystalsweb_88x31.gif"></a>
+                            </div>
+                            
+                            <div class="button">
+                                <a href="https://daikonet.neocities.org/"><img src="https://daikonet.neocities.org/img/butts/link_malta.gif"></a>
+                            </div>
+                            
+
+                            <div class="button">
+                                <a href="https://silverope.neocities.org/boys/Dchamps"><img src="https://silverope.neocities.org/boys/dchamplogo.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://dimwit.neocities.org/"><img src="https://dimwit.neocities.org/img/btn/dim-btn.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://elevator-to-the-moon.neocities.org/"><img src="https://elevator-to-the-moon.neocities.org/elevatorttm_button.png"></a>
+                            </div> 
+
+                            <div class="button">
+                                <a href="https://emptyhalls.neocities.org/"><img src="../graphix/buttons/links/emptyhalls.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://www.expectationemesis.net/"><img src="../graphix/buttons/links/expnembutton.png"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://faegardens333.neocities.org/" target="_blank"><img src="https://faegardens333.neocities.org/buttonv2.gif" alt="faegardens333"></a>
+                            </div>            
+
+                            <div class="button">
+                                <a href="https://fauux.neocities.org/"><img src="https://fauux.neocities.org/fauux-btn-01.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://frutigeraeroarchive.org/"><img src="../graphix/buttons/links/frutigeraeroarchive_button.png"></a>
+                            </div>
+                      </div>
+                    </div>
+                    <div class="rightmarquee">
+                        <div class="scrollerRight">
+                            <div class="button">
+                            <a href="https://glitchedguts.neocities.org/"><img src="https://i.postimg.cc/nzxknj2T/BUTTON1.png"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://goblin-heart.net/sadgrl/"><img src="https://goblin-heart.net/sadgrl/assets/images/buttons/sadgrlonline.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://goopthekid.com/"><img src="../graphix/buttons/links/samhayn.png"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://item64.neocities.org/"><img src="https://item64.neocities.org/img/item64.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://keysklubhouse.com/"><img src="../graphix/buttons/links/keysklubhouse.png"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://kiwimeowo.neocities.org/"><img src="https://kiwimeowo.neocities.org/button/button.png"></a>
+                            </div>
+                            
+                            <div class="button">
+                                <a href="https://lovesick.cafe/"><img src="../graphix/buttons/links/lovesick-2024-88x31.gif"></a>
+                            </div>
+                            
+                            <div class="button">
+                                <a href="https://inkposting.neocities.org/"><img src="https://inkposting.neocities.org/b/inkposting.png"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://ita.toys/"><img src="https://ita.toys/links/ita-button-02.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://monsieurdoll.neocities.org" target="_blank"><img src="https://i.imgur.com/j85uDmZ.png"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://mani.neocities.org/" target="_blank"><img src="../graphix/buttons/links/mani.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://melonking.net/"><img src="../graphix/buttons/links/melonking.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://milfgod.net/"><img src="../graphix/buttons/links/milfgod.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://neonaut.neocities.org/"><img src="../graphix/buttons/links/neonaut-banner.png"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://nightmarefantasmic.neocities.org/"><img src="https://nightmarefantasmic.neocities.org/linkme/linkmebaku.png"></a>
+                            </div>
+                            
+                            <div class="button">
+                                <a href="https://n-razm.neocities.org/"><img src="../graphix/buttons/links/n-razm_button_v2.png"></a>
+                            </div>
+                            
+                            <div class="button">
+                                <a href="https://ninacti0n.neocities.org/"><img src="../graphix/buttons/links/ninacti0n.gif"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="marqueecontainer">
+                        <div class="scroller">
+                            <div class="button">
+                                <a href="https://spacefungus.tv/"><img src="../graphix/buttons/links/spacefungus.gif"></a>
+                            </div>
+                        
+                            <div class="button">
+                                <a href="https://spiritcellar.neocities.org/"><img src="../graphix/buttons/links/spiritcellar.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://starrs.neocities.org/"><img src="../graphix/buttons/links/tiny_space.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://superkirbylover.me"><img src="https://superkirbylover.me/img/sitebutton.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://sweethard666.neocities.org"><img src="../graphix/buttons/links/sweethard666.gif"></a> 
+                            </div>            
+
+                            <div class="button">
+                                <a href="https://syntheticfruits.neocities.org/"><img src="../graphix/buttons/links/syntheticfruits.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://textures.neocities.org/"><img src="../graphix/buttons/links/textures.gif"></a>
+                            </div>
+                            
+                            <div class="button">
+                                 <a href="https://thilinky.neocities.org/" target="_blank"><img src="https://thilinky.neocities.org/about/ThilinkyButton.gif" alt="thilinky"></a>
+                            </div>
+                            
+                            <div class="button">
+                                <a href="https://tofokyo.com/"><img src="../graphix/buttons/links/tofokyo.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://valarkspur.neocities.org/" target="_blank"><img src="../graphix/buttons/links/valarkspur.gif" title="VALARKSPUR.NEOCITIES.ORG"></a>
+                            </div>
+                            
+                            <div class="button">
+                                <a href="https://velvetblue.neocities.org"><img src="https://files.catbox.moe/vltthb.png" alt="Velvet Blue"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://warp.zone"><img src="https://warp.zone/Graphix/88x31/warpzone_button.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://wiishopchannel.neocities.org/"><img src="https://wiishopchannel.net/button.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://winbows.neocities.org/" target="_top"><img src="https://winbows.neocities.org/resources/winbows-btn.png" title="Winbows XP by Xobyte" alt="Winbows XP by Xobyte"/></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://windowsme.neocities.org"><img src="https://windowsme.neocities.org/images/88x31.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://xp-zone.neocities.org/"><img src="https://xp-zone.neocities.org/button.gif"></a>
+                            </div>
+
+                            <div class="button">
+                                <a href="https://xzyolotl.neocities.org/"><img src="https://xzyolotl.neocities.org/webimages/xzy_button10.gif"></a>
+                            </div>
+                            
+                            <div class="button">
+                                <a href="https://zenmaistudio.com" target="_blank"><img src="https://zenmaistudio.com/banner.gif"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="xtra"> </div>
+            </div>
+        </div>
+        
+        <footer id="footer">
+            <p class="footer">toribytez, 2024<br>Heavily modified from <a href="https://goblin-heart.net/sadgrl/projects/layout-builder/">Sadgrl's Layout Builder</a></p>
+        </footer>
+    </div>
+</body>

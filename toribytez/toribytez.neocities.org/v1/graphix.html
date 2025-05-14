@@ -1,0 +1,224 @@
+<head>
+    <title>GRAPHIX - toribytez✦ // (INTER).face</title>
+    <link rel="icon" type="image/x-icon" href="../art/branding/sigil.png">
+    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* iframe */
+        iframe {
+            height: 350px;
+            width: 100%;
+            border: 3px solid #3875f2;
+            overflow: auto;
+            position: relative;
+            order: 2;
+        }
+    /* --------------------------------------------------- */
+        .selection {
+            ul {
+                padding-left: 10px;
+                li {
+                    margin-left: 5px;
+                }
+            }
+        }
+    </style>
+<!------------------ <3 --------------------->
+    <!-- cursor effect -->
+    <!-- OG code from DHTML; modded by jadd (https://proto.re) -->
+    <style type="text/css">
+      :root {
+        --bubble-border-top-color: #a6f;
+        --bubble-border-right-color: #60f;
+        --bubble-border-bottom-color: #60f;
+        --bubble-border-left-color: #a6f;
+        --bubble-background-color: #ccc;
+        --bubble-background-opacity: 50%;
+        --bubble-z-index: 1001;
+      }
+
+      .bubble {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: var(--bubble-z-index);
+        background: rgb(from var(--bubble-background-color) r g b / var(--bubble-background-opacity));
+        border: 1px solid;
+        border-top-color: var(--bubble-border-top-color);
+        border-right-color: var(--bubble-border-right-color);
+        border-bottom-color: var(--bubble-border-bottom-color);
+        border-left-color: var(--bubble-border-left-color);
+        border-radius: 100%;
+      }
+    </style>
+    <script type="text/javascript">
+      const MAX_BUBBLE_COUNT = 66;
+
+      //
+      // BEHOLD THE MAGIC
+      // 
+      const bubbles = [];
+      let isAnimating = false;
+      let canSpawnBubble = true;
+      let splashTimeout;
+
+      document.addEventListener('DOMContentLoaded', onLoad);
+
+      function onLoad() {
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mousedown', onMouseDown);
+        document.addEventListener('mouseup', onMouseUp);
+      }
+
+      function onMouseMove(event) {
+        spawnBubble(event.clientX, event.clientY);
+      }
+
+      function onMouseDown(event) {
+        splash(event.clientX, event.clientY);
+      }
+
+      function onMouseUp(event) {
+        clearTimeout(splashTimeout);
+      }
+
+      function splash(x, y) {
+        spawnBubble(x, y);
+        splashTimeout = setTimeout(() => {
+        splash(x, y);
+        }, 100);
+      }
+
+      function spawnBubble(x, y) {
+        if (!canSpawnBubble) return;
+        canSpawnBubble = false;
+
+        if (bubbles.length >= MAX_BUBBLE_COUNT) popBubble(0);
+
+        const div = document.createElement('div');
+        div.classList.add('bubble');
+        document.body.appendChild(div);
+        const bubble = {
+          div,
+          x,
+          y: y - 3,
+          s: 3
+        }
+        bubbles.push(bubble);
+        animate();
+
+        setTimeout(() => {
+        canSpawnBubble = true
+        }, 40);
+      }
+
+      function popBubble(i) {
+        if (bubbles.length <= i) return;
+        const bubble = bubbles.splice(i, 1)[0];
+        bubble.div.remove();
+      }
+
+      function animate() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        setTimeout(() => {
+        requestAnimationFrame(() => {
+        isAnimating = false;
+
+        const w = document.documentElement.clientWidth;
+        const h = document.documentElement.clientHeight;
+
+        for (let i = 0; i < bubbles.length; i++) {
+          const bubble = bubbles[i];
+          bubble.y -= bubble.s / 2 + i % 2;
+          bubble.x += (i % 5 - 2) / 5;
+
+          if (bubble.x < -bubble.s || bubble.x >= w || bubble.y < -bubble.s || bubble.y >= h) {
+            popBubble(i);
+            continue;
+          }
+          if (Math.random() < bubble.s / h * 2 && bubble.s < 7) {
+            bubble.s += 1;
+            bubble.div.style.width = `${bubble.s}px`;
+            bubble.div.style.height = `${bubble.s}px`;
+            }
+            bubble.div.style.translate = `${bubble.x}px ${bubble.y}px`;
+        }
+
+          if (bubbles.length) {
+            animate();
+          }
+        });
+      }, 40);
+    }
+  </script>
+</head>
+<body>
+    <div id="container">
+        <div id="headerArea" style="position: relative;">
+            <div id="header">
+                <div id="logo">
+                    <a href="index.html">
+                        <div id="toribytez"></div>
+                    </a>
+                </div>
+                <img src="../graphix/characters/rei3.gif" style="position: absolute; right: 55; top: -92px;">
+            </div>
+            <nav id="navbar" style="margin-bottom: 10px;">
+                <ul>
+                    <li><a href="who.html">Who?</a></li>
+                    <li><a href="gallery.html">Artworks</a></li>
+                    <li><a href="to-do.html">To-do</a></li>
+                    <li><a href="shrines.html">Shrines</a></li>
+                    <li><a href="graphix.html">Graphix</a></li>
+                    <li><a href="links.html">Links</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="flex">
+            <aside class="left" loop=-1; style="margin-right: 10px; max-width: 140px; height: auto; padding: 5;">
+                <div class="selection">
+                    <ul>
+                        <li><a href="graphix/0.html" target="window">Home</a></li>
+                        <li><a href="graphix/adsbanners.html" target="window">Ads + Banners</a></li>
+                        <li><a href="graphix/blinkies.html" target="window">Blinkies</a></li>
+                        <li><a href="graphix/buttons.html" target="window">Buttons</a></li>
+                        <li><a href="graphix/characters.html" target="window">Characters</a></li>
+                        <li><a href="graphix/dividers.html" target="window">Dividers</a></li>
+                        <li>Graphics
+                            <ul>
+                                <li><a href="graphix/small.html" target="window">Small</a></li>
+                                <li><a href="graphix/med.html" target="window">Medium</a></li>
+                                <li><a href="graphix/large.html" target="window">Large</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="graphix/icons.html" target="window">Icons</a>
+                            <ul>
+                                <li><a href="graphix/avi.html" target="window">Avatars</a></li>
+                                <li><a href="graphix/favicons.html" target="window">Favicons</a></li>
+                            </ul>
+                          </li>
+                        <li><a href="graphix/stamps.html" target="window">Stamps</a>
+                            <ul>
+                                <li><a href="graphix/honeycomb.html" target="window">Honeycomb</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="graphix/userbars.html" target="window">Userbars</a></li>
+                    </ul>        
+                </div>
+            </aside>
+
+                <iframe
+                    src="graphix/0.html" name="window"
+                    title="">
+                </iframe>
+        </div>
+
+        <footer id="footer">
+            <p class="footer" style="color:white; font-size:10px">toribytez, 2024<br>Heavily modified from <a href="https://goblin-heart.net/sadgrl/projects/layout-builder/">Sadgrl's Layout Builder</a></p>
+        </footer>
+    </div>
+</body>

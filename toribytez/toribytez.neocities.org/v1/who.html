@@ -1,0 +1,510 @@
+<head>
+    <title>WHO?? - toribytez✦ // (INTER).face</title>
+    <link rel="icon" type="image/x-icon" href="../art/branding/sigil.png">
+    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1 {
+            margin: 0;
+        }
+        p { 
+            font-size: medium;
+        }
+        
+        main {
+            overflow-y: scroll;
+            overflow-wrap: break-word;
+        }
+        
+        .headdy {
+            padding-top: 5;
+        }
+    /* ----------------------------------------------- */
+        /*-- avatarintro --*/
+        #avatar {
+            width: 100%;
+            max-width: 201.717px;
+            padding: 10;
+            border: 3px solid #3875f2;
+            background-color: #deedff;                
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        #icon {
+            box-shadow: inset 11px 0px 4px -8px rgb(101 142 255 / 56%), inset -11px 0px 4px -8px rgb(101 142 255 / 56%), inset 0px 11px 4px -8px #ffffff, inset 0px -11px 4px -8px rgb(57 117 234 / 38%);
+            background-image: url(../art/branding/icon/icon.png); background-position: center;
+            background-size: 10.5em 10.5em;
+            background-repeat: no-repeat;
+            width: 10.4em;
+            height: 10.5em;
+            border-radius:0.5rem;
+            border: 4px ridge #658eff;
+        }
+
+        
+        #flags { img {
+            width: 40;
+            border-radius:0.5rem;
+            border: 2px solid #3875f2;
+            }
+        }
+        
+    /* ----------------------------------------------- */    
+        #quizzes {
+            text-align: center;
+            img {
+                filter: grayscale(50%);
+                max-width: 180px;
+                margin: 3 auto;
+                &:hover {
+                    transform: scale(1.05);
+                    transition: filter 0.5s;
+                    filter: saturate(1.5);
+                }
+            }
+        }
+        
+    /* ----------------------------------------------- */
+        #gifypet {
+            border: 3px solid #3875f2;
+            background-color: #deedff;                
+            display: flex;
+            flex-direction: column;
+        }
+    /* ----------------------------------------------- */
+        #interests {
+            height: 220;
+            padding: 10;
+            border: 3px solid #3875f2;
+            background-color: #deedff;                
+            display: flex;
+            flex-direction: column;
+            
+            overflow-y: scroll;
+            padding: 10px;
+            overflow-wrap: break-word;
+            
+            details {
+                padding-left: 15;
+                margin-top: 5;
+            }
+            summary {
+                font-weight: bold;
+            }
+            
+            ul {
+                margin: 0;
+            }
+            
+            li {
+                ul {
+                    padding-left: 20px;
+                }
+            }
+        }
+    /* ----------------------------------------------- */
+        #vid {
+            padding: 10;
+            border: 3px solid #3875f2;
+            background-color: #deedff;                
+            display: flex;
+            flex-direction: column;
+        }
+    /* ----------------------------------------------- */
+        .xtra {
+            padding: 10;
+            border: 3px solid #3875f2;
+            background-color: #deedff;                
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            
+            overflow-y: scroll;
+            padding: 10px;
+            overflow-wrap: break-word;            
+            
+            ul {
+                padding-left: 20; margin: 5;
+            }
+            
+            img {
+                &:hover {
+                    transform:scale(1.1);
+                    object-fit: contain;
+                }
+            }
+        }
+    </style>
+<!------------------ <3 --------------------->
+    <!-- cursor effect -->
+    <!-- OG code from DHTML; modded by jadd (https://proto.re) -->
+    <style type="text/css">
+      :root {
+        --bubble-border-top-color: #a6f;
+        --bubble-border-right-color: #60f;
+        --bubble-border-bottom-color: #60f;
+        --bubble-border-left-color: #a6f;
+        --bubble-background-color: #ccc;
+        --bubble-background-opacity: 50%;
+        --bubble-z-index: 1001;
+      }
+
+      .bubble {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: var(--bubble-z-index);
+        background: rgb(from var(--bubble-background-color) r g b / var(--bubble-background-opacity));
+        border: 1px solid;
+        border-top-color: var(--bubble-border-top-color);
+        border-right-color: var(--bubble-border-right-color);
+        border-bottom-color: var(--bubble-border-bottom-color);
+        border-left-color: var(--bubble-border-left-color);
+        border-radius: 100%;
+      }
+    </style>
+    <script type="text/javascript">
+      const MAX_BUBBLE_COUNT = 66;
+
+      //
+      // BEHOLD THE MAGIC
+      // 
+      const bubbles = [];
+      let isAnimating = false;
+      let canSpawnBubble = true;
+      let splashTimeout;
+
+      document.addEventListener('DOMContentLoaded', onLoad);
+
+      function onLoad() {
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mousedown', onMouseDown);
+        document.addEventListener('mouseup', onMouseUp);
+      }
+
+      function onMouseMove(event) {
+        spawnBubble(event.clientX, event.clientY);
+      }
+
+      function onMouseDown(event) {
+        splash(event.clientX, event.clientY);
+      }
+
+      function onMouseUp(event) {
+        clearTimeout(splashTimeout);
+      }
+
+      function splash(x, y) {
+        spawnBubble(x, y);
+        splashTimeout = setTimeout(() => {
+        splash(x, y);
+        }, 100);
+      }
+
+      function spawnBubble(x, y) {
+        if (!canSpawnBubble) return;
+        canSpawnBubble = false;
+
+        if (bubbles.length >= MAX_BUBBLE_COUNT) popBubble(0);
+
+        const div = document.createElement('div');
+        div.classList.add('bubble');
+        document.body.appendChild(div);
+        const bubble = {
+          div,
+          x,
+          y: y - 3,
+          s: 3
+        }
+        bubbles.push(bubble);
+        animate();
+
+        setTimeout(() => {
+        canSpawnBubble = true
+        }, 40);
+      }
+
+      function popBubble(i) {
+        if (bubbles.length <= i) return;
+        const bubble = bubbles.splice(i, 1)[0];
+        bubble.div.remove();
+      }
+
+      function animate() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        setTimeout(() => {
+        requestAnimationFrame(() => {
+        isAnimating = false;
+
+        const w = document.documentElement.clientWidth;
+        const h = document.documentElement.clientHeight;
+
+        for (let i = 0; i < bubbles.length; i++) {
+          const bubble = bubbles[i];
+          bubble.y -= bubble.s / 2 + i % 2;
+          bubble.x += (i % 5 - 2) / 5;
+
+          if (bubble.x < -bubble.s || bubble.x >= w || bubble.y < -bubble.s || bubble.y >= h) {
+            popBubble(i);
+            continue;
+          }
+          if (Math.random() < bubble.s / h * 2 && bubble.s < 7) {
+            bubble.s += 1;
+            bubble.div.style.width = `${bubble.s}px`;
+            bubble.div.style.height = `${bubble.s}px`;
+            }
+            bubble.div.style.translate = `${bubble.x}px ${bubble.y}px`;
+        }
+
+          if (bubbles.length) {
+            animate();
+          }
+        });
+      }, 40);
+    }
+  </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="headerArea" style="position: relative;">
+            <div id="header">
+                <div id="logo">
+                    <a href="index.html">
+                        <div id="toribytez"></div>
+                    </a>
+                </div>
+                <img src="../graphix/characters/rei3.gif" style="position: absolute; right: 55; top: -92px;">
+            </div>
+            <nav id="navbar" style="margin-bottom: 10px;">
+                <ul>
+                    <li><a href="who.html">Who?</a></li>
+                    <li><a href="gallery.html">Artworks</a></li>
+                    <li><a href="to-do.html">To-do</a></li>
+                    <li><a href="shrines.html">Shrines</a></li>
+                    <li><a href="graphix.html">Graphix</a></li>
+                    <li><a href="links.html">Links</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="flex" style="position: relative; margin-top: 10px; height: 360px">
+            <div id="avatar" width="100%">
+                <div id="icon" style="margin-left: 4">
+                    <img src="../graphix/icons/xp/MSN.png" style="width: 45px; position: absolute; left: 148; top: 10;">
+                </div>
+                <div class="divider2" style="margin-top:10"></div>
+                <div style="line-height: 1; margin: 0">
+                    <b>NAME:</b> Tori / Byte<br>
+                    <b>PRONOUNS:</b> They/Them<a href="https://pronouns.cc/@gigabytez">+</a><br>
+                    <b>DoB:</b> 12/23/2003
+                </div>
+                <div id="flags" style="margin-top: 10;">
+                    <img src="../flags/bi.png">
+                    <img src="../flags/nb.jpg">
+                </div>
+                <div id="tama">
+                    <a href="https://tamanotchi.world/14194c"><img src="https://tamanotchi.world/i/14194" alt="It's tamaNOTchi! Click to feed!"></a>
+                </div>
+            </div>
+            <main style="margin-left: 10px;">
+                <div class="main__inner" style="padding: 5">
+                    <div class="headdy">
+                        <h1><img src="../graphix/icons/xp/user.png" style="width: 50px; margin-right: 10;">About me</h1>
+                    </div>
+                    <p style="margin-bottom: 10">Hello! My name's <mark>Byte</mark> (or <mark>Tori</mark>, which-ever goes), and I'm a black American artist who's heavily inspired by the neo-y2k and frutiger movement of the 2020s and visionary art! My works combine all sorts of internet culture and fandom with 90s-2000s nostalgia, Japanese influences, mysticism, and futurism. I'm also autistic.</p>
+                    <img src="../graphix/misc/networx.gif" style="text-align: center; margin: auto; display: block">
+                    <p>I was first invested in web design around 2018 thanks to Carrd (the site I used as building blocks until July 2024). However, I wasn't interested in HTML-CSS coding because some aspects feel overwhelming and complicated, so I tend to collect graphics for future purposes from various sites, from the reblogs of Tumblr to the rabbit holes of Neocities. But my perspective changed when I was introduced to sheezy.art from Twitter back in March 2024. I know it's a successor to the original SheezyArt.com, as well as a great alternative to the ever-infamous DeviantArt. Currently, I'm still teaching myself how to code, but I'm slowly improving and learning.</p>
+                    <p>Aside from web design and drawing, I enjoy graphic design, collecting and listening to music, learning about obscure things such as lost media, and reading wikis!</p>
+                </div>
+            </main>
+            <aside class="right"
+                   style="width: 25%;
+                        display: column;
+                        margin-left: 10px;
+                        overflow-x: hidden;
+                        overflow-y: scroll;
+                        scrollbar-width: none;
+                        scrollbar-gutter: stable;
+                        padding: 8px;
+                        overflow-wrap: break-word;">
+                        
+                <div class="headdy" style="z-index:100; padding-top: 10">
+                    <h1><img src="../graphix/icons/xp/Information.png" style="width: 25px">Quizzes</h1>
+                </div>
+                
+                <div id="quizzes">
+                    <a href="https://theotaku.com/quizzes/view/1592/what_is_your_anime_hair_color%3F"><img src="../graphix/quizzes/1592_Brunette.jpg"></a>
+                    <a href="https://www.theotaku.com/quizzes/view/4097/what_dere_type_are_you%3F"><img src="../graphix/quizzes/4097_Kuudere.jpg"></a>
+                    <a href="https://www.dragonflycave.com/quizzes/what-type-are-you/dark"><img src="../graphix/quizzes/dark.png"></a>
+                    <a href="https://pennylovespandas.neocities.org/quiz/creature"><img src="../graphix/quizzes/dragon.png"></a>
+                    <a href="https://www.nerdtests.com/ft_nq.php"><img src="../graphix/quizzes/e8976aab52.gif"></a>
+                    <a href="http://cupped-expressions.net/cheese/quiz/" TARGET=NEW><img src="https://cupped-expressions.net/cheese/quiz/american03.gif"></a> 
+                    <a href="https://andou.gay/quiz/donutquiz"><img src="https://andou.gay/quiz/jelly donut.png"></a>
+                    <a href="https://www.theotaku.com/quizzes/view/4021/which_touhou_boss_%28embodiment_of_scarlet_devil%29_are_you%3F_"><img src="https://www.theotaku.com/guru_results/4021_Remilia_Scarlet.jpg"></a>
+                    <a href="https://www.theotaku.com/quizzes/view/3913/which_hatsune_miku_nendoroid_model_are_you%3F"><img src="https://www.theotaku.com/guru_results/3913_Hachune_Miku.jpg"></a>
+                    <a href='https://clownfred.zone/clownquiz'><img src='https://clownfred.zone/!Media/CQ/KillerCard2.png' alt='I am a Killer Clown! Click here to take the clown quiz!'></a>
+                    <a href="https://web.archive.org/web/20091028180015/http://valvigirl.net/quizzes/ppgquiz.html" target="_blank"><img src="https://web.archive.org/web/20091028180015im_/http://valvigirl.net/quizzes/bubbles.gif" alt="Which PPG are you?"></a>
+                    <a href="http://suppi.net/slg"><img src="http://suppi.net/slg/fun/images/mallet.jpg" alt="Take the anime accessory quiz"></a>
+                    <a href="http://dokodemo.neocities.org/gamelounge/splatidol.html"><img src="http://dokodemo.neocities.org/gamelounge/splatoon/marie.png" alt="Marie" title="You're most like Marie from the Squid Sisters!"></a>
+                </div>
+            </aside>
+        </div>
+        <div class="flex" style="position: relative; margin-top: 10px; width: 100%; height: 220">
+            <div id="vid">
+                    <h1>Video of the Now</h1>
+                    <iframe src="https://www.youtube-nocookie.com/embed/QbvvHsn6sgQ?si=eQnI__k00Emhw9yc" allowfullscreen="true"
+                            width="100%"
+                            height="100%"
+                            style="border: 3px solid #3875f2; border-radius: 0.5rem"
+                            title="YouTube video player"
+                            name="video"
+                            loading="lazy">
+                    </iframe>
+            </div>
+            <div id="interests" style="margin-left: 10px; width: 52%;">
+                <div class="headdy">
+                   <h1><img src="../graphix/icons/xp/Favorites.png" style="width: 30px;">Things I Enjoy:</h1>
+                </div>
+                
+                <details><summary>In General:</summary>
+                        <ul><li><b>Web design, duh!</b></li></ul>
+                        <ul><li><b>OS-tans</b></li></ul>
+                        <ul><li><b>Mecha + all sorts of robots</b></li></ul>
+                        <ul><li><b>Lost and obscure media</b></li></ul>
+                        <ul><li><b>Collecting and archiving anything I like</b></li></ul>
+                        <ul><li>80s-2000s culture</li></ul>
+                        <ul><li>"Bizarre" creatures (deep sea creatures come into mind)</li></ul>
+                    </details>
+                
+                <details><summary>Music:</summary>
+                        <ul><li><b>Susumu Hirasawa</b></li></ul>
+                        <details style="padding-left: 26; margin: 0;"><summary style="font-family: 'BuilderSansLight'; font-weight: bold">In the nerdcore techno scene:</summary>
+                            <ul>
+                                <li>DJ Sharpnel</li>
+                                <li>Nihonkokumin/日本國民</li>
+                                <li>Cycheouts/サイケアウツ</li>
+                                <li>Hakke Shoukai/八卦商会</li>
+                                <li>Traffic Jammies</li>
+                                <li>Allkore</li>
+                                <li>NEVEN</li>
+                            </ul>
+                        </details>
+                        <ul><li><b>Insane Clown Posse</b></li></ul>
+                        <ul><li><b>Gangpol und Mit</b></li></ul>
+                        <ul><li><b>Mami Chan</b></li></ul>
+                        <ul><li>Plus-Tech Squeeze Box</li></ul>
+                        <ul><li>Mohican Sandbag</li></ul>
+                        <ul><li>Louie Zong</li></ul>
+                        <ul><li>Macross 82-99</li></ul>
+                        <ul><li>NANORAY</li></ul>
+                        <ul><li>Zovi</li></ul>
+                    </details>
+                
+                <details><summary>Video Games:</summary>
+                        <ul><li><b>Persona 5</b></li>
+                        <small>(thanks bro!!)</small></ul>
+                        <ul><li><b>SHMUP games</b></li></ul>
+                        <ul><li><b>Arzette: The Jewel of Faramore</b></li></ul>
+                        <ul><li><b>Skullgirls</b></li></ul>
+                        <details style="padding-left: 26; margin: 0;"><summary style="font-family: 'BuilderSansLight'; font-weight: bold">Roblox:</summary>
+                            <ul>
+                                <li><b>Super Doomspire</b></li>
+                                <li><b>Grace</b></li>
+                                <li>Find Everything</li>
+                                <li>Regretevator</li>
+                            </ul>
+                        </details>
+                        <ul><li>Psychonauts</li></ul>
+                        <ul><li>MapleStory</li></ul>
+                        <ul><li>Yume Nikki</li></ul>
+                        <ul><li>Sonic the Hedgehog</li></ul>
+                        <ul><li>Splatoon</li></ul>
+                        <ul><li>Elite Dangerous</li></ul>
+                    </details>
+                
+                <details><summary>Series</summary>
+                        <details style="padding-left: 26; margin: 0;"><summary style="font-family: 'BuilderSansLight'; font-weight: bold">Anime:</summary>
+                            <ul>
+                                <li><b>Panty & Stocking with Garterbelt</b></li>
+                                <li><b>Madoka Magica</b></li>
+                                <li>Serial Experiments Lain</li>
+                                <li>Kaiba (2008)</li>
+                                <li>Lupin III</li>
+                            </ul>
+                        </details>
+                        <details style="padding-left: 26; margin: 0;"><summary style="font-family: 'BuilderSansLight'; font-weight: bold">Western Animation:</summary>
+                            <ul>
+                                <li><b>Eddsworld</b></li>
+                                <li>OK KO</li>
+                                <li>PPG '98</li>
+                                <li>Bunny Maloney</li>
+                                <li>Steven Universe</li>
+                            </ul>
+                        </details>
+                        <details style="padding-left: 26; margin: 0;"><summary style="font-family: 'BuilderSansLight'; font-weight: bold">Misc:</summary>
+                            <ul>
+                                <li><b>Hungarian Folk Tales</b></li>
+                            </ul>
+                        </details>
+                    </details>
+                
+                <details><summary>Literature</summary>
+                        <ul><li><b>Problem Sleuth</b></li></ul>
+                        <ul><li>Design Plex</li></ul>
+                        <ul><li>Pictoplasma</li></ul>
+                        <ul><li>Harlan Ellison</li></ul>
+                        <ul><li>George Orwell</li></ul>
+                        <ul><li>Homestuck <small>(only as an art form)</small></li></ul>
+                    </details>
+            </div>
+            <div class="xtra" style="width: 52%">
+                <div class="headdy">
+                    <h1>Currently...</h1>
+                </div>
+                
+                <ul>
+                    <li><b>Listening  to:</b> GenesisKeys, DJ Technorch, 2Mello</li>
+                    <li><b>Playing:</b> <i>Bomb Rush Cyberfunk</i>, <i>Persona 5 Royal</i>, <i>Mario & Luigi: Brothership</i></li>
+                    <li><b>Reading:</b> <i>Cells at Work!</i></li>
+                    <li><b>Watching:</b> <i>Hungarian Folk Tales</i> and <i>Neon Genesis Evangelion</i></li>
+                </ul>
+                <div class="divider2"></div>
+                <div class="headdy">
+                   <h1>I want to...</h1>
+                </div>
+                
+                <ul>
+                    <li><b>Listen to:</b> The Prodigy, Aphex Twin</li>
+                    <li><b>Play:</b> <i>Picayune Dreams</i>, <i>Persona 3 Reload</i>, <i>Persona 4 Gold</i>, <i>Metal Slug</i>, <i>Super Mario Sunshine</i> <small>(via emulation)</small></li>
+                    <li><b>Read:</b> <i>Dorohedoro</i></li>
+                    <li><b>Watch:</b> <i>American Psycho</i>, <i>TTGL</i>, <i>DunMeshi</i></li>
+                </ul>
+            </div>
+            <div class="xtra" style="width: 40%">
+                <div class="headdy">
+                    <h1>Fanlists</h1>
+                </div>
+                
+                    <div>
+                        <a href="https://aerofanlisting.nekoweb.org/"><img src="../graphix/fanlist/frutiger50x503.png"></a>
+                        <a href="http://www.marheavenj.net/protagonist/"><img src="../graphix/fanlist/011.jpg"></a>
+                        <a href="https://fans.thislove.nu/html/index.php"><img src="../graphix/fanlist/html50x50_001.png"></a>
+                        <a href="https://fans.thislove.nu/mozilla/index.php"><img src="../graphix/fanlist/mozilla50x50.png"></a>
+                        <a href="https://fan.redcrown.net/katamari/"><img src="../graphix/fanlist/katamari.png"></a>
+                        <a href="https://www.kiri-no-hana.net/ann/"><img src="../graphix/fanlist/50x50-001.jpg"></a>
+                    </div>
+            </div>
+            <img src="../graphix/misc/flower_6.gif" style="width: 85px; position: absolute; top: -71; left: -15">
+            <img src="../graphix/icons/xp/Windows%20Movie%20Maker.png" style="width: 55px; position: absolute; bottom: 1; left: 1;">
+            <img src="../graphix/characters/animegirlfan.gif" style="width: 120px; position: absolute; right: 1; bottom: 210">
+        </div>
+        <footer id="footer">
+            <p class="footer">toribytez, 2024<br>Heavily modified from <a href="https://goblin-heart.net/sadgrl/projects/layout-builder/">Sadgrl's Layout Builder</a></p>
+        </footer>        
+    </div>
+</body>

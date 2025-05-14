@@ -35,25 +35,25 @@
     /* BuilderSans */
         @font-face {
             font-family: BuilderSansLight;
-            src: url(/fonts/Builder_Sans/BuilderSans-Light-300.otf) format("opentype");
+            src: url(fonts/Builder_Sans/BuilderSans-Light-300.otf) format("opentype");
         }
 
 
         @font-face {
             font-family: BuilderSans;
-            src: url(/fonts/Builder_Sans/BuilderSans-Medium-500.otf) format("opentype");
+            src: url(fonts/Builder_Sans/BuilderSans-Medium-500.otf) format("opentype");
         }
 
 
     /* Fredoka */
         @font-face {
             font-family: FredokaSemiBold;
-            src: url('/fonts/Fredoka/static/Fredoka-SemiBold.ttf') format("truetype");
+            src: url('fonts/Fredoka/static/Fredoka-SemiBold.ttf') format("truetype");
         }
 
         @font-face {
             font-family: FredokaBold;
-            src: url('/fonts/Fredoka/static/Fredoka-Bold.ttf') format("truetype");
+            src: url('fonts/Fredoka/static/Fredoka-Bold.ttf') format("truetype");
         }
 /* ----------------------------------------------- */
     /* main digital body */
@@ -68,7 +68,7 @@
             margin: 0;
             background-color: #a5e1ff;
             background-size: 35px;
-            background-image:url('/graphix/bgs/checkered.gif'); background-attachment: fixed;
+            background-image:url('graphix/bgs/checkered.gif'); background-attachment: fixed;
             background-blend-mode: screen;
         }
 
@@ -126,7 +126,7 @@
 /* ----------------------------------------------- */
     /* logo */
         #logo {
-            content: url(/art/branding/logo2.png);
+            content: url(art/branding/logo2.png);
             display: block;
             margin: 5 auto;
             width: 250px;
@@ -317,7 +317,7 @@
         }
 
         .divider {
-            content: url(/graphix/dividers/bow.png);
+            content: url(graphix/dividers/bow.png);
             width: 100%;
             margin: 5 auto;
         }
